@@ -1,16 +1,5 @@
 import { Component, computed, Input, input, Output, EventEmitter, output } from '@angular/core';
-
-// type User = {
-//   id: string;
-//   name: string;
-//   avatar: string;
-// };
-
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
+import { type User } from './user.model';
 
 //const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
@@ -23,6 +12,7 @@ interface User {
 })
 export class UserComponent {
   @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
   // @Input({ required: true }) id!: string;
   // @Input({ required: true }) avatar!: string;
   // @Input({ required: true }) name!: string;
